@@ -1,5 +1,5 @@
 import React from 'react';
-import { getInnsatsgruppeNavn, InnsatsgruppeType } from '../skjema/innsatsgruppe/innsatsgruppe';
+import { InnatsgruppeVisning as Visning, InnsatsgruppeType } from '../skjema/innsatsgruppe/innsatsgruppe';
 import SkjemaBolk from '../skjema/bolk/skjema-bolk';
 
 export function InnsatsgruppeVisning(props: {innsatsgruppe: InnsatsgruppeType, beslutter?: string}) {
@@ -9,7 +9,7 @@ export function InnsatsgruppeVisning(props: {innsatsgruppe: InnsatsgruppeType, b
             tittelId="innsatsgruppe-tittel"
         >
             <div className="innsatsgruppe-visning">
-                <span>{getInnsatsgruppeNavn(props.innsatsgruppe)}</span>
+                <Visning innsatsgruppe={props.innsatsgruppe}/>
                 {props.beslutter && <span><b>Beslutter: </b> {props.beslutter}</span>}
             </div>
         </SkjemaBolk>
